@@ -51,9 +51,17 @@ class BasicMathParameterizedTest {
 	
 	@ParameterizedTest
 	@ValueSource(strings = {"Joao", "Gabriel", "Carvalho", "Lopes", "Cruz"})
-	@DisplayName("Test with Value Source")
-	void test_value_source(String name) {
+	@DisplayName("Test with Value Source String")
+	void test_value_source_string(String name) {
 		Assertions.assertNotNull(name);
+	}
+	
+	@ParameterizedTest
+	@ValueSource(ints = {0,1,2,3,4,5,6,7,8,9})
+	@DisplayName("Test with Value Source Int")
+	void test_value_source_int(int nums) {
+		Assertions.assertNotNull(nums);
+		
 	}
 
 }
