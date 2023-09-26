@@ -10,6 +10,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class BasicMathParameterizedTest {
 
@@ -46,6 +47,13 @@ class BasicMathParameterizedTest {
 		BasicMath basicMath = new BasicMath();
 		BigDecimal result = basicMath.div(dividend, divider);
 		Assertions.assertEquals(expected, result);
+	}
+	
+	@ParameterizedTest
+	@ValueSource(strings = {"Joao", "Gabriel", "Carvalho", "Lopes", "Cruz"})
+	@DisplayName("Test with Value Source")
+	void test_value_source(String name) {
+		Assertions.assertNotNull(name);
 	}
 
 }
