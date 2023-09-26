@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 class BasicMathParameterizedTest {
@@ -25,5 +26,14 @@ class BasicMathParameterizedTest {
 				Arguments.of(new BigDecimal(5), new BigDecimal(5), new BigDecimal(1)));
 				
 	}
+	
+	@ParameterizedTest
+	@CsvSource({"20, 10, 2", "7, 7, 1", "48, 8, 6"})
+	void test_div_csv_source(BigDecimal dividend, BigDecimal divider, BigDecimal expected) {
+		BasicMath basicMath = new BasicMath();
+		BigDecimal result = basicMath.div(dividend, divider);
+		Assertions.assertEquals(expected, result);
+	}
+	
 
 }
