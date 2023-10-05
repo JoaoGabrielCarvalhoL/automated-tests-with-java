@@ -175,6 +175,15 @@ public class Person implements Serializable {
 	private void setupUpdated() {
 		setUpdatedAt(LocalDateTime.now());
 	}
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", postalCode=" + postalCode
+				+ ", email=" + email + ", username=" + username + ", createdAt=" + createdAt + ", updatedAt="
+				+ updatedAt + ", isActive=" + isActive + "]";
+	}
+	
+	
 	
 	
 	
