@@ -3,14 +3,14 @@ package br.com.carv.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import br.com.carv.mapper.PersonMapper;
+import br.com.carv.mapper.impl.PersonMapperImpl;
 
 @Configuration
 public class PersonMapperConfig {
 	
 	@Bean
-	PersonMapper personMapper() {
-		return new PersonMapper();
+	PersonMapperImpl personMapper() {
+		return new PersonMapperImpl();
 	}
 
 }

@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import br.com.carv.entity.Person;
 import br.com.carv.exception.ResourceAlreadyUsedException;
 import br.com.carv.exception.ResourceNotFound;
-import br.com.carv.mapper.PersonMapper;
+import br.com.carv.mapper.impl.PersonMapperImpl;
 import br.com.carv.payload.request.PersonPostRequest;
 import br.com.carv.payload.request.PersonPutRequest;
 import br.com.carv.payload.response.PersonGetResponse;
@@ -25,10 +25,10 @@ import br.com.carv.service.PersonService;
 public class PersonServiceImpl implements PersonService {
 
 	private final PersonRepository personRepository;
-	private final PersonMapper personMapper;
+	private final PersonMapperImpl personMapper;
 	private final Logger logger = Logger.getLogger(PersonServiceImpl.class.getCanonicalName());
 
-	public PersonServiceImpl(PersonRepository personRepository, PersonMapper personMapper) {
+	public PersonServiceImpl(PersonRepository personRepository, PersonMapperImpl personMapper) {
 		this.personRepository = personRepository;
 		this.personMapper = personMapper;
 	}

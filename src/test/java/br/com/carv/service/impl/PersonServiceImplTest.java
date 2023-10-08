@@ -23,7 +23,7 @@ import org.springframework.data.domain.Sort;
 import br.com.carv.entity.Person;
 import br.com.carv.exception.ResourceAlreadyUsedException;
 import br.com.carv.exception.ResourceNotFound;
-import br.com.carv.mapper.PersonMapper;
+import br.com.carv.mapper.impl.PersonMapperImpl;
 import br.com.carv.payload.request.PersonPostRequest;
 import br.com.carv.payload.response.PersonGetResponse;
 import br.com.carv.repository.PersonRepository;
@@ -35,7 +35,7 @@ class PersonServiceImplTest {
 	private PersonRepository personRepository;
 
 	@Mock
-	private PersonMapper personMapper;
+	private PersonMapperImpl personMapper;
 
 	@InjectMocks
 	private PersonServiceImpl personService;
