@@ -6,5 +6,4 @@ public record PersonGetResponse(
 		UUID id,
 		String firstName, 
 		String email) {
-
 }
